@@ -4,8 +4,8 @@ package com.liuwill.kata.hundredDoor;
  * Created by videopls on 2017/2/26.
  */
 public class Door {
-    public boolean isOpen;
-    public int index;
+    private boolean isOpen;
+    private int index;
 
     public Door(int index) {
         this.index = index;
