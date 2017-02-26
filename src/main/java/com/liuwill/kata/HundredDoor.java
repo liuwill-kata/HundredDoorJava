@@ -1,3 +1,4 @@
+package com.liuwill.kata;
 
 public class HundredDoor {
 
