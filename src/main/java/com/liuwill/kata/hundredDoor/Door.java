@@ -20,6 +20,10 @@ public class Door {
         isOpen = open;
     }
 
+    public void switchDoor() {
+        isOpen = !isOpen;
+    }
+
     public int getIndex() {
         return index;
     }

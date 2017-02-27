@@ -23,7 +23,7 @@ public class DoorHolder{
     }
 
     public void createDoor(){
-        Door door = new Door(doors.size());
+        Door door = new Door(doors.size()+1);
         doors.add(door);
     }
 
@@ -36,11 +36,26 @@ public class DoorHolder{
         }
     }
 
+    public Door getDoorAt(int position){
+        if(position > doors.size() || position<1){
+            throw new IndexOutOfBoundsException("there is not so much doors");
+        }
+        return doors.get(position-1);
+    }
+
     public int countDoors(){
         return doors.size();
     }
 
-    public Iterator getAllDoors(){
+    public Iterator<Door> getAllDoors(){
         return doors.iterator();
+    }
+
+    public void operateDoorHolder(int count){
+        for(Door door : doors){
+            if(door.getIndex()%count == 0){
+                door.switchDoor();
+            }
+        }
     }
 }
