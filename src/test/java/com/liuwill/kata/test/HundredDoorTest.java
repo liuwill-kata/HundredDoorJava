@@ -91,4 +91,56 @@ public class HundredDoorTest {
             assertEquals(doorSet.getKey().intValue(), door.getIndex());
         }
     }
+
+    @Test
+    public void verify_turn_state(){
+        Door testDoor = new Door(0);
+        assertFalse(testDoor.isOpen());
+        Random random = new Random();
+
+        for(int i=0;i<100;i++){
+            Door door = new Door(0);
+            int turnTimes = random.nextInt(HundredDoor.DOOR_COUNT)%(HundredDoor.DOOR_COUNT+1)+1;
+            assertTrue(turnTimes <= HundredDoor.DOOR_COUNT);
+            assertTrue(turnTimes > 0);
+
+            for(int t=0;t<turnTimes;t++){
+                door.switchDoor();
+            }
+
+            assertEquals(door.isOpen(), turnTimes%2!=0);
+        }
+
+        System.out.println("verify_turn_state");
+    }
+
+    @Test
+    public void verify_trun_rule(){
+        Random random = new Random();
+
+        for(int times = 0; times < 100;times++){
+            boolean defaultState = false;
+            int randPos = random.nextInt(HundredDoor.DOOR_COUNT)%(HundredDoor.DOOR_COUNT+1)+1;
+            int reduceCount = 0;
+            for(int i = 1; i <= randPos ; i++){
+                if(randPos%i == 0){
+                    reduceCount++;
+                    defaultState = !defaultState;
+                }
+            }
+
+            boolean resultState = false;
+            if(reduceCount % 2 != 0){
+                assertEquals(1,reduceCount % 2);
+                resultState = true;
+                assertTrue(defaultState);
+            }else{
+                assertFalse(defaultState);
+            }
+
+            assertEquals(resultState, defaultState);
+        }
+
+        System.out.println("verify_trun_rule");
+    }
 }
