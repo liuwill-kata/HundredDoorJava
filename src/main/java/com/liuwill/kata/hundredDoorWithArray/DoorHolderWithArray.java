@@ -1,7 +1,7 @@
 package com.liuwill.kata.hundredDoorWithArray;
 
 /**
- * Created by videopls on 2017/2/28.
+ * Created by liuwill on 2017/2/28.
  */
 public class DoorHolderWithArray {
     private boolean[] doorsArr;

@@ -11,9 +11,9 @@ sourceCompatibility = 1.7
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
     maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     maven{ url 'http://maven.oschina.net/content/groups/public/'}
+    jcenter()
 }
 
 mainClassName = 'com.liuwill.kata.HundredDoor'

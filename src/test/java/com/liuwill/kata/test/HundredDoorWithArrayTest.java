@@ -9,7 +9,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
- * Created by videopls on 2017/2/27.
+ * Created by liuwill on 2017/2/27.
  */
 public class HundredDoorWithArrayTest {
 

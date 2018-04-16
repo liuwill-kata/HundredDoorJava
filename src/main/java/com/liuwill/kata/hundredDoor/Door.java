@@ -1,7 +1,7 @@
 package com.liuwill.kata.hundredDoor;
 
 /**
- * Created by videopls on 2017/2/26.
+ * Created by liuwill on 2017/2/26.
  */
 public class Door {
     private boolean isOpen;
